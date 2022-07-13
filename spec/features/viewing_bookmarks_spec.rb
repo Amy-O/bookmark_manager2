@@ -2,11 +2,9 @@
 
 feature 'viewing bookmarks' do
     scenario 'returns a list of bookmarks' do
-        connection = PG.connect(dbname: 'bookmark_manager_test')
-
-        connection.exec("INSERT INTO bookmarks (url) VALUES ('http://makers.tech');")
-        connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.destroyallsoftware.com');")
-        connection.exec("INSERT INTO bookmarks (url) VALUES('http://www.google.com');")    
+        Bookmark.create(url: "http://makers.tech")
+        Bookmark.create(url: "http://www.destroyallsoftware.com")
+        Bookmark.create(url: "http://www.google.com") 
        
         visit('/bookmarks')
 
