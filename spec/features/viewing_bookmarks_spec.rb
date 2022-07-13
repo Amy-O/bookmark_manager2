@@ -1,7 +1,7 @@
 
 
 feature 'viewing bookmarks' do
-    xscenario 'returns a list of bookmarks' do
+    scenario 'returns a list of bookmarks' do
         visit('/bookmarks')
 
         expect(page).to have_content "http://makers.tech"
